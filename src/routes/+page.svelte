@@ -1,5 +1,14 @@
 <script>
 import WordCard from './WordCard.svelte';
+export let data;
+console.log(data.words);
+
+const wordData = data.words;
+
+let wordIndex = 0;
+
+let word = wordData[wordIndex].word;
+let definition = wordData[wordIndex].translations.eng.translation;
 </script>
 
 <svelte:head>
@@ -8,7 +17,9 @@ import WordCard from './WordCard.svelte';
 </svelte:head>
 
 <section>
-	<WordCard/>
+	<WordCard 
+	{word}
+	{definition} />
 </section>
 
 
